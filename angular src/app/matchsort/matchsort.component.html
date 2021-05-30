@@ -1,0 +1,38 @@
+<style>
+  table, th , td  {
+    border: 1px solid grey;
+    border-collapse: collapse;
+    padding: 5px;
+  }
+  table tr:nth-child(odd) {
+    background-color: #f1f1f1;
+  }
+  table tr:nth-child(even) {
+    background-color: #ffffff;
+  }
+  .point-table{
+    margin-left: 500px;
+  }
+  </style>
+
+<u><h1 style="margin-left: 520px;">Premiere League Match Table</h1></u>
+<table class="points-table" style="margin-left: 190px;margin-top: 20px;width: 1050px;text-align: center;border: 1px solid black; padding: 5px;">
+  <thead>
+  <tr>
+    <th>Home Team</th>
+    <th>Away Team</th>
+    <th>Home Team Goal</th>
+    <th>Away Team Goal</th>
+    <th style="width: 30%;">Date</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let pointsort of clubs[0]">
+    <td style="width:30%">{{pointsort.teamA.name}}</td>
+    <td style="width:30%">{{pointsort.teamB.name}}</td>
+    <td>{{pointsort.teamAScore}}</td>
+    <td>{{pointsort.teamBScore}}</td>
+    <td style="width:30%">{{pointsort.date}}</td>
+  </tr>
+  </tbody>
+</table>

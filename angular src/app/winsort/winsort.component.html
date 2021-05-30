@@ -1,0 +1,57 @@
+<style>
+  table, th , td  {
+    border: 1px solid grey;
+    border-collapse: collapse;
+    padding: 5px;
+  }
+  table tr:nth-child(odd) {
+    background-color: #f1f1f1;
+  }
+  table tr:nth-child(even) {
+    background-color: #ffffff;
+  }
+  .point-table{
+    margin-left: 500px;
+  }
+  </style>
+
+<u><h1 style="margin-left: 520px;">Premiere League Win Table</h1></u>
+<table class="points-table" style="margin-left: 190px;margin-top: 20px;width: 1050px;text-align: center;border: 1px solid black; padding: 5px;">
+  <thead>
+  <tr>
+    <th>Points</th>
+    <th>Win</th>
+    <th>Loss</th>
+    <th>Draw</th>
+    <th>Scored Goals</th>
+    <th>Recieved Goals</th>
+    <th>Matches Played</th>
+    <th>Goal Difference</th>
+    <th style="width: 30%;">Club</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let winsort of clubs[0]">
+    <td>{{winsort.points}}</td>
+    <td>{{winsort.winCount}}</td>
+    <td>{{winsort.defeatCount}}</td>
+    <td>{{winsort.drawCount}}</td>
+    <td>{{winsort.scoredGoalsCount}}</td>
+    <td>{{winsort.receivedGoalsCount}}</td>
+    <td>{{winsort.matchesPlayed}}</td>
+    <td>{{winsort.scoredGoalsCount - winsort.receivedGoalsCount}}</td>
+    <td style="width: 30%;">{{winsort.name}}</td>
+  </tr>
+  <tr *ngFor="let winsort of clubs[1]">
+    <td>{{winsort.points}}</td>
+    <td>{{winsort.winCount}}</td>
+    <td>{{winsort.defeatCount}}</td>
+    <td>{{winsort.drawCount}}</td>
+    <td>{{winsort.scoredGoalsCount}}</td>
+    <td>{{winsort.receivedGoalsCount}}</td>
+    <td>{{winsort.matchesPlayed}}</td>
+    <td>{{winsort.scoredGoalsCount - winsort.receivedGoalsCount}}</td>
+    <td style="width: 30%;">{{winsort.name}}</td>
+  </tr>
+  </tbody>
+</table>

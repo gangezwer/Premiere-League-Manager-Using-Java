@@ -1,0 +1,23 @@
+import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
+@Component({
+  selector: 'app-goalsort',
+  templateUrl: './goalsort.component.html',
+  styleUrls: ['./goalsort.component.css']
+})
+export class GoalsortComponent implements OnInit {
+
+  clubs: any;
+
+  constructor(private http: HttpClient) { }
+
+    ngOnInit(): void {
+             this.http.get("http://localhost:8080/goalComparator").subscribe((data) =>
+             {console.log("recieved")
+             console.log(data);
+             this.clubs = data;
+        });
+       }
+
+}
